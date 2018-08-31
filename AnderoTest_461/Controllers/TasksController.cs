@@ -37,9 +37,9 @@ namespace AnderoTest_461.Controllers
 		{
 			Task task = new Task
 			{
-				Created = DateTime.Now,
-				Modified = DateTime.Now,
-				Expired = DateTime.Now
+				Created = DateTime.UtcNow,
+				Modified = DateTime.UtcNow,
+				Expired = DateTime.UtcNow
 			};
 			return View(task);
 		}
@@ -53,6 +53,9 @@ namespace AnderoTest_461.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				task.Modified = DateTime.UtcNow;
+				task.SavedDates = $"N: {DateTime.UtcNow} || M: {task.Modified} || X: {task.Expired}";
+
 				db.Tasks.Add(task);
 				db.SaveChanges();
 				return RedirectToAction("Index");
@@ -85,6 +88,10 @@ namespace AnderoTest_461.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				task.Modified = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc);
+
+				task.SavedDates = $"N: {DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc)} || M: {task.Modified} || X: {task.Expired}";
+
 				db.Entry(task).State = EntityState.Modified;
 				db.SaveChanges();
 				return RedirectToAction("Index");

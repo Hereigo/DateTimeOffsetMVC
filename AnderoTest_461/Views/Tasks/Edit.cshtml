@@ -52,7 +52,11 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.Expired, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.Expired, new { htmlAttributes = new { @class = "form-control" } })
+
+				@*@Html.EditorFor(model => model.Expired, new { htmlAttributes = new { @class = "form-control" } })*@
+				
+				<input id="Expired" asp-for="@Model.Expired" type="datetime-local" value="@Model.Expired.ToLocalTime().ToString("yyyy-MM-dd HH:mm")" class="form-control" />
+				
 				@Html.ValidationMessageFor(model => model.Expired, "", new { @class = "text-danger" })
 			</div>
 		</div>
