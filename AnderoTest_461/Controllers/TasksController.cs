@@ -35,7 +35,12 @@ namespace AnderoTest_461.Controllers
 		// GET: Tasks/Create
 		public ActionResult Create()
 		{
-			Task task = new Task { Created = DateTime.Now, Modified = DateTime.Now, Expired = DateTime.Now };
+			Task task = new Task
+			{
+				Created = DateTime.Now,
+				Modified = DateTime.Now,
+				Expired = DateTime.Now
+			};
 			return View(task);
 		}
 
@@ -44,7 +49,7 @@ namespace AnderoTest_461.Controllers
 		// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create([Bind(Include = "ID,Title,Created,Modified,Expired")] Task task)
+		public ActionResult Create([Bind(Include = "ID,Title,SavedDates,Created,Modified,Expired")] Task task)
 		{
 			if (ModelState.IsValid)
 			{
@@ -76,7 +81,7 @@ namespace AnderoTest_461.Controllers
 		// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit([Bind(Include = "ID,Title,Created,Modified,Expired")] Task task)
+		public ActionResult Edit([Bind(Include = "ID,Title,SavedDates,Created,Modified,Expired")] Task task)
 		{
 			if (ModelState.IsValid)
 			{

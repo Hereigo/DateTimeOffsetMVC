@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.SavedDates)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Created)
         </th>
         <th>
@@ -30,6 +33,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SavedDates)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Created)

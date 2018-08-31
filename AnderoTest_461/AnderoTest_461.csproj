@@ -127,6 +127,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808311345039_Initial.cs" />
+    <Compile Include="Migrations\201808311345039_Initial.Designer.cs">
+      <DependentUpon>201808311345039_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808311346236_Add_SavedDates.cs" />
+    <Compile Include="Migrations\201808311346236_Add_SavedDates.Designer.cs">
+      <DependentUpon>201808311346236_Add_SavedDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808311358389_SavedDates_NorRequired.cs" />
+    <Compile Include="Migrations\201808311358389_SavedDates_NorRequired.Designer.cs">
+      <DependentUpon>201808311358389_SavedDates_NorRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CustomDatetimeValidator.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\TasksContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +150,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DatetimePicker\jquery.datetimepicker.js" />
+    <Content Include="DatetimePicker\jquery.datetimepicker.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -197,6 +213,17 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808311345039_Initial.resx">
+      <DependentUpon>201808311345039_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311346236_Add_SavedDates.resx">
+      <DependentUpon>201808311346236_Add_SavedDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311358389_SavedDates_NorRequired.resx">
+      <DependentUpon>201808311358389_SavedDates_NorRequired.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
