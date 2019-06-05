@@ -64,6 +64,14 @@ namespace AnderoTest_461.Controllers
 			return View(task);
 		}
 
+		public static TimeSpan GetOffSetTime(string date)
+		{
+			DateTime d = Convert.ToDateTime(date);
+			TimeZone zone = TimeZone.CurrentTimeZone;
+			TimeSpan local = zone.GetUtcOffset(d);
+			return local;
+		}
+
 		// GET: Tasks/Edit/5
 		public ActionResult Edit(int? id)
 		{
